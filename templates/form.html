@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>DNS AGE</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+    <body>
+        <h1>Enter your details here</h1>
+        <form method="post" action="{{ url_for('results') }}">
+            <p><label>Name:</label> <input type="text" name="username" required></p>
+            <a>Date of Birth:</a>
+            <select name="day" required>
+                 <option value=></option>
+                 {{ day_list|safe }}
+            </select>
+            <select name="month" required>
+                 <option value=></option>
+                 {{ month_list|safe }}
+            </select>
+            <select name="year" required>
+                 <option value=></option>
+                 {{ year_list|safe }}
+            </select>
+            <p><label>Domain to check:</label> <input type="text" name="domain_name" required></p>
+            <p><button type="submit">Send</button></p>
+        </form>
+    </body>
+</html>
+
